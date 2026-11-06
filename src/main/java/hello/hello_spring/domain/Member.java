@@ -1,7 +1,15 @@
 package hello.hello_spring.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity //JPA가 관리하는 엔티티
 public class Member {
 //아이디 식별자랑 이름
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) //DB가 id 자동 생성 (identity 전략)
     private Long id;
     private String name;
 
@@ -26,4 +34,3 @@ public class Member {
 
     }
 }
-
